@@ -1,0 +1,200 @@
+﻿@charset "UTF-8";
+
+/* 기본 설정: 페이지 전체 */
+* {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.slide_banner {
+    width: 1024px;
+    padding: 0 35px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide_banner .btns {}
+
+.slide_banner .btns a {
+    position: absolute;
+    font-size: 0px;
+    text-indent: -9999px;
+    transform: translateY(-50%)
+}
+
+.slide_banner .btns a.prev {
+    left: 0px;
+    top: 50%;
+    border-top: 12px solid transparent;
+    border-right: 20px solid #ccc;
+    border-bottom: 12px solid transparent;
+}
+
+.slide_banner .btns a.next {
+    right: 0px;
+    top: 50%;
+    border-top: 12px solid transparent;
+    border-left: 20px solid #ccc;
+    border-bottom: 12px solid transparent;
+}
+
+.slide_banner .btns a.prev:hover {
+    border-right-color: coral
+}
+
+.slide_banner .btns a.next:hover {
+    border-left-color: coral
+}
+
+
+
+.slide_banner .imgTrain_wrap {
+    overflow: hidden;
+}
+
+/*부모 박스 .slide_banner의 너비와 높이 만큼만 보이고 나머지는 숨김/ 결국 ul세트 하나만 보이고 나머지는 숨김 */
+.slide_banner .imgTrain_wrap .imgTrain ul {
+    width: 1024px;
+    float: left;
+}
+
+.slide_banner .imgTrain_wrap .imgTrain ul li {
+    float: left;
+    width: 300px;
+    height: 250px;
+    margin-right: 50px;
+}
+
+.slide_banner .imgTrain_wrap .imgTrain ul li:last-child {
+    margin-right: 0px
+}
+
+.slide_banner .imgTrain_wrap .imgTrain ul li img {
+    width: 300px;
+    height: 300px;
+}
+
+
+
+#header {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #ccc;
+    background-color: blanchedalmond;
+}
+
+#header .inner {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+#header .inner:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#header h1.logo {
+    float: left;
+}
+
+#header h2.name {
+    position: absolute;
+    left: 45%;
+    color: #ccc;
+}
+
+#header .info {
+    float: right;
+}
+
+#header .info ul.login {}
+
+#header .info ul.login li {
+    float: left;
+    padding: 10px;
+}
+
+#header .info ul.login li a {
+    display: block;
+    color: #333;
+    font-size: 16px
+}
+
+#container {
+    width: 100%;
+    height: 600px;
+    background-color: beige;
+}
+
+#container .inner {
+    width: 1400px;
+    margin: 0 auto;
+    padding: 100px 0px 100px 0px;
+    overflow: hidden;
+}
+
+#container .inner .imgTrain_wrap .imgTrain ul {}
+
+#container .inner .imgTrain_wrap .imgTrain ul li {
+    float: left;
+    position: relative;
+}
+
+#container .inner .imgTrain_wrap .imgTrain ul li img {
+    
+}
+
+#container .inner .imgTrain_wrap .imgTrain ul li a {
+    
+}
+
+#container .inner ul.s_info {
+    float: left;
+}
+
+#container .inner ul.s_info li {
+    float: left;
+}
+
+#container .inner ul.s_info li:nth-child(1) {
+    margin-left:250px;
+    position: relative;
+}
+
+#container .inner ul.s_info li:nth-child(2) {
+    margin-left: 170px;
+    position: relative;
+}
+
+#container .inner ul.s_info li:nth-child(3) {
+    margin-left: 180px
+}
+
+#container .inner ul.s_info li a {
+    display: block;
+    padding: 0px 50px 0px 50px;
+}
+
+
+.footer_container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    display: block;
+    cursor: default;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(25, 25, 25, 1);
+}
+
+.footer_container .footA {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.footer_container .footB {
+    font-size: 15px;
+}
