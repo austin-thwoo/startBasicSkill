@@ -3,11 +3,32 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="Member"> 	
-
+	
 	
 	<insert id="insertDB" parameterType="Member">
 	 INSERT INTO MEMBERS VALUES(#{mid}, #{mpass}, #{mname}, #{mphon}, #{memail}, #{mbirth})
 	</insert>
+	
+	<select id="selectDB" parameterType="Member" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MID = #{mid} AND MPASS=#{mpass} 
+	</select>
+	
+	<select id="memberList"  resultType="Member">
+	SELECT * FROM MEMBERS 
+	</select>
+	
+	
+	<select id="memberDetail" parameterType="String" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MID=#{mid}
+	</select>
+	<delete id="memberDel" parameterType="String">
+	DELETE FROM MEMBERS WHERE MID = #{mid}
+	</delete>
+	
+	<update id="memberModi" parameterType="Member" >
+	UPDATE MEMBERS SET MPASS=#{mpass}, MNAME=#{mname}, MPHON=#{mphon}, MEMAIL=#{memail}, MBIRTH=#{mbirth} WHERE MID=#{mid}
+	</update>
+
  </mapper>
  
  

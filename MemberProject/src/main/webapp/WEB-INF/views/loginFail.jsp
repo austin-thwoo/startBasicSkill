@@ -8,17 +8,11 @@
 </head>
 <body>
 <h1>
-	Hello Login world!  
+	 Login Fail TTTTTTTTTTTTTTTTTTTTTT 
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<form action="logintry">
-아이디	: <input type="text" name="mid"> <br>
-비밀번호: <input type="text" name="mpass"> <br>
-<input type="submit" value="LoginTry!">
-</form>
-<a href="./">go to home</a>
 
-
+<a href="login">try Again</a>
 </body>
 </html>
