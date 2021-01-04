@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="Board"> 	
+	
+	
+	<insert id="writeDB" parameterType="Board" >
+	 INSERT INTO BOARD VALUES(SEQ_BUMBER.NEXTVAL, #{bwriter}, #{bpass}, #{btitle}, #{bcontent}, SYSDATE, 0)
+	</insert>
+	
+	 <select id="boardList" resultType="Board">
+	select * FROM BOARD  
+	</select>
+	
+	 <select id="boardDetail" parameterType="int" resultType="Board">
+	select * FROM BOARD WHERE BNUMBER= #{bnumber}
+	</select>
+	
+	
+<!-- 	<update id="boardHit" parameterType="int">
+	UPDATE BOARD SET BHIT = ;
+	</update> -->
+	
+	<update id="boardModify" parameterType="Board">
+	UPDATE BOARD SET BTITLE = #{btitle}, BCONTENT = #{bcontent} WHERE BNUMBER=#{bnumber}
+	</update>
+	
+	<delete id="boarddelete" parameterType="int">
+	DELETE FROM board WHERE BNUMBER=#{bnumber}
+	</delete>
+	
+	<insert id="boardWriteFile" parameterType="Board">
+	 INSERT INTO BOARD VALUES(SEQ_BUMBER.NEXTVAL, #{bwriter}, #{bpass}, #{btitle}, #{bcontent}, SYSDATE, 0, #{bfilename} ) 
+	</insert> 
+	
+	<select id="boardlistCount" resultType="int">
+	SELECT COUNT(BNUMBER) FROM BOARD
+	</select>
+	
+	<select id="boardListPaging" parameterType="page" resultType="Board">
+	SELECT * FROM (SELECT B.*, ROW_NUMBER() OVER(ORDER BY BNUMBER DESC)
+			AS RN FROM BOARD B) WHERE RN BETWEEN #{startRow} AND #{endRow}
+
+	</select>
+	
+	 </mapper>
+	
+	<!--<select id="memberList"  resultType="Member">
+	SELECT * FROM MEMBERS 
+	</select>
+	
+	
+	<select id="memberDetail" parameterType="String" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MID=#{mid}
+	</select>
+	<delete id="memberDel" parameterType="String">
+	DELETE FROM MEMBERS WHERE MID = #{mid}
+	</delete>
+	
+	<update id="memberModi" parameterType="Member" >
+	UPDATE MEMBERS SET MPASS=#{mpass}, MNAME=#{mname}, MPHON=#{mphon}, MEMAIL=#{memail}, MBIRTH=#{mbirth} WHERE MID=#{mid}
+	</update>
+
+	<select id="idOverlap" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBERS WHERE MID=#{mid}
+	</select> -->
+	
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
