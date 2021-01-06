@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="Member"> 	
+	
+	
+	<insert id="signup" parameterType="Member">
+	 INSERT INTO MEMBERS VALUES(#{mb_code}, #{mb_pass}, #{mb_name}, #{mb_digit}, #{mb_email}, #{mb_birth}, #{mb_gender}, 'n')
+	</insert>
+	
+	<select id="signin" parameterType="Member" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MB_CODE = #{mb_code} AND MB_PASS= #{mb_pass} 
+	</select>
+	
+	<select id="memberList"  resultType="Member">
+	SELECT * FROM MEMBERS 
+	</select>
+	
+	
+	<select id="memberDetail" parameterType="String" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MID=#{mid}
+	</select>
+	<delete id="memberDel" parameterType="String">
+	DELETE FROM MEMBERS WHERE MID = #{mid}
+	</delete>
+	
+	<update id="memberModi" parameterType="Member" >
+	UPDATE MEMBERS SET MPASS=#{mpass}, MNAME=#{mname}, MPHON=#{mphon}, MEMAIL=#{memail}, MBIRTH=#{mbirth} WHERE MID=#{mid}
+	</update>
+
+	<select id="idOverlap" parameterType="String" resultType="String">
+		SELECT MID FROM MEMBERS WHERE MID=#{mid}
+	</select>
+ </mapper>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
