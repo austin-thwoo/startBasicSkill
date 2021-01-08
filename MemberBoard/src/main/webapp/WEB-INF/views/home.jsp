@@ -3,8 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,9 +51,9 @@
 						</li>
 						<li class="nav-item"><a class="nav-link" href="mypage">MyPage</a>
 						</li>
-						<c:if test="${userlevel eq 'A'}">
-							<li>
-							<li class="nav-item"><a class="nav-link" href="memberlist">VML</a>
+						<c:if test="${sessionScope.userlevel eq 'A'}">
+							<li class="nav-item">
+								<a class="nav-link" href="memberlist">VML</a>
 							</li>
 						</c:if>
 

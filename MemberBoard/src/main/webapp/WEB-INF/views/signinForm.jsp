@@ -42,14 +42,12 @@
 <!---- Font awesom link local ----->
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-first">
 		<div class="container">
-			<h2 class="text-center" id="title">Facundo farm and Resort</h2>
+			<h2 class="text-center" id="title"><a href="./">hello ani world</a></h2></h2>
 			<p class="text-center">
-				<small id="passwordHelpInline" class="text-muted">
-					Developer: follow me on facebook <a
-					href="https://www.facebook.com/JheanYu"> John niro yumang</a>
-					inspired from <a href="https://p.w3layouts.com/">https://p.w3layouts.com/</a>.
+				 집에가고싶다구..?
+				
 				</small>
 			</p>
 			<hr>
@@ -89,7 +87,7 @@
 				<div class="col-md-5">
 					<form role="form">
 						<fieldset>
-							<img src="\D:\\eclip\\MemberBoard\\src\\main\\webapp\\resources\\img\\sao.jpg" width="500" height="500">
+							<img src="resources/img/sao.jpg" width="500" height="500">
 									
 						</fieldset>
 					</form>

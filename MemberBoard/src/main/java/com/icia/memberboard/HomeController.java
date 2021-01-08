@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,8 @@ import com.icia.memberboard.service.MemberService;
 public class HomeController {
 ModelAndView mav;
 
-
+@Autowired
+private HttpSession session;
 
 
 	@RequestMapping(value = "/")
@@ -56,8 +59,13 @@ ModelAndView mav;
 	
 	
 	//로그아웃할거냐 물어본다
-	
 
+	@RequestMapping(value = "/logout")
+	public String memberLogout() {
+		session.invalidate();
+		return "home";
+		
+	}
 	
 	
 }
