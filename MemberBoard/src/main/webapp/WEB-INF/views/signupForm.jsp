@@ -137,8 +137,7 @@
 					<form role="form">
 						<fieldset>
 							<img
-								src="D:\\eclip\\MemberBoard\\src\\main\\webapp\\resources\\img\\sao.jpg"
-								width="500" height="500"> 
+								src="resources/img/sao.jpg" width="500" height="500"> 
  					
 						</fieldset>
 					</form>

@@ -31,9 +31,9 @@ public class membercontroller {
 	//로그인 셀렉트하러가는 메소드
 	@RequestMapping(value = "/signintry")
 	public ModelAndView signin(@ModelAttribute MemberDTO dto) {
-		System.out.println("이곳은 멤버컨트롤러입니다1."+dto.toString());
+		
 		mav = memberService.signintry(dto);
-		System.out.println("이곳은 멤버컨트롤러입니다2."+dto.toString());
+	
 		
 		return mav;
 	}
@@ -68,7 +68,7 @@ public class membercontroller {
 
 	@RequestMapping(value = "/idoverlap")
 	public @ResponseBody String idOverlap(@RequestParam("mb_code") String mb_code) {
-		System.out.println( "ajax로 넘어온값" + mb_code);
+	
 		String resultMsg=memberService.idOverlap(mb_code);
 		
 		
@@ -84,4 +84,16 @@ public class membercontroller {
 
 		return mav;
 		}	
+	
+	
+	//마이페이지 페이지로 가는 메서드
+	@RequestMapping(value = "/mypage")
+	public ModelAndView gomypage(@RequestParam("mb_code") String mb_code) {
+		System.out.println("이곳은 멤버 컨틀ㄹ러 gomypage입니다" + mb_code);
+		mav=memberService.memberinfo(mb_code);
+		
+		
+		return mav;
+		
+	}
 }

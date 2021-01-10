@@ -31,9 +31,16 @@
 	DELETE FROM MEMBERS WHERE MB_CODE = #{mb_code}
 	</delete>
 	
+
+	<select id="viewinfo" parameterType="String" resultType="Member">
+	SELECT * FROM MEMBERS WHERE MB_CODE=#{mb_code}
+	</select>
+
+
 	<update id="memberModi" parameterType="Member" >
 	UPDATE MEMBERS SET MPASS=#{mpass}, MNAME=#{mname}, MPHON=#{mphon}, MEMAIL=#{memail}, MBIRTH=#{mbirth} WHERE MID=#{mid}
 	</update>
+
 
 
  </mapper>

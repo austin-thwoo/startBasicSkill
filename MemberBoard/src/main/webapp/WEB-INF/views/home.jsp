@@ -41,7 +41,7 @@
 					</c:if>
 					<c:if test="${!empty mb_name}">
 						<li class="nav-item active">${mb_name}님 어서오라눙!!!!</li>
-						<li class="nav-item active"><a href="">Home
+						<li class="nav-item active"><a href="./">Home
 								<span class="sr-only">(current)</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -49,8 +49,9 @@
 								animation</a></li>
 						<li class="nav-item"><a class="nav-link" href="logout">LOGOUT</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="mypage">MyPage</a>
+						<li class="nav-item"><a class="nav-link" href="mypage?mb_code=${mb_code}">MyPage</a>
 						</li>
+						
 						<c:if test="${sessionScope.userlevel eq 'A'}">
 							<li class="nav-item">
 								<a class="nav-link" href="memberlist">VML</a>

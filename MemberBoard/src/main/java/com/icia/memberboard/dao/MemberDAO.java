@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.icia.memberboard.dto.MemberDTO;
 
@@ -47,6 +48,13 @@ public class MemberDAO {
 
 	public int memberdel(String mb_code) {
 		return 	sql.delete("Member.Delete", mb_code);
+		
+	}
+
+
+	public MemberDTO memberinfo(String mb_code) {
+		System.out.println("daodaodao"+mb_code);
+		return sql.selectOne("Member.viewinfo", mb_code);
 		
 	}
 

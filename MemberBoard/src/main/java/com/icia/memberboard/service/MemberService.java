@@ -119,6 +119,18 @@ public class MemberService {
 		return mav;
 	}
 
+	public ModelAndView memberinfo(String mb_code) {
+		mav= new ModelAndView();
+		
+		MemberDTO dto =dao.memberinfo(mb_code);
+		System.out.println("씨발"+dto.toString());
+		mav.addObject("memberinfo", dto);
+		
+		mav.setViewName("myPage");
+		
+		return mav;
+	}
+
 
 
 }
